@@ -20,33 +20,6 @@ bfs_nr_kt <- read_csv("Data/BFS_nr/kt.csv", locale = locale(encoding = "Latin1")
 
 
 
-# 01 kt age20to39 ---------------------------------------------------------
-
-myfiles <- list.files("Data/00_Raw_Data/01_kt_age20to39", full.names = T)
-mytib <- vector("list", length = length(myfiles))
-
-i <- 1
-for (i in 1:length(myfiles)) {
-  myfile <- read_xlsx(myfiles[i])
-  mytib[[i]] <- tibble(reso = "Kanton",
-                       nr = unlist(unname(myfile[6:31,1])),
-                       name = unlist(unname(myfile[6:31,2])),
-                       year = str_sub(names(myfile)[1], -4),
-                       pop_y_nr = unlist(unname(myfile[6:31,3])),
-                       pop_y_pc = unlist(unname(myfile[6:31,4]))
-  )
-}
-
-cant_y <- do.call("rbind", mytib)
-cant_y$nr <- as.integer(cant_y$nr)
-cant_y$year <- as.integer(cant_y$year)
-cant_y$pop_y_nr <- as.numeric(cant_y$pop_y_nr)
-cant_y$pop_y_pc <- as.numeric(cant_y$pop_y_pc)
-
-cant_y <- cant_y %>% 
-  gather(pop_y_nr, pop_y_pc, key = "target", value = "value")
-
-
 
 # 02_pg_age20to39 ---------------------------------------------------------
 
