@@ -1,0 +1,20 @@
+﻿Kategorie,kat_short,Variable,var_short
+Bevölkerung,bev,Anzahl Einwohner/innen,bev_anz_einwohner
+Alter,alt,Anzahl Einwohner/innen zwischen 20-39 Jahren,alt_anz_20bis39
+,,Anteil 20-39 Jähriger an Gesammtbevölkerung,alt_ant_20bis39
+Geburten,geb,Anzahl Geburten,geb_anz_geb
+,,Anzahl Geburten pro Kopf und Jahr,geb_ant_geb
+,,Anteil neuer Mütter unter 25,geb_ant_geb_unt25
+,,Anteil neuer Mütter über 35,geb_ant_geb_ueb35
+Zivilstand,ziv,Anteil 20-24 Jähriger welche ledig sind,ziv_ant_ledig_20bis24
+,,Anteil 25-29 Jähriger welche ledig sind,ziv_ant_ledig_25bis29
+,,Anteil 30-34 Jähriger welche ledig sind,ziv_ant_ledig_30bis34
+Wohnen,woh,Total Anzahl Wohnungen,woh_anz_wohnungen
+,,Anteil 1 Personen Haushalte,woh_ant_1pers
+,,Anteil 2 Personen Haushalte,woh_ant_2pers
+,,Anteil 3 Personen Haushalte,woh_ant_3pers
+,,Anteil 4 Personen Haushalte,woh_ant_4pers
+,,Anteil 5 Personen Haushalte,woh_ant_5pers
+,,Anteil Haushalte mit mehr als 5 Personen,woh_ant_mehr6
+Mobilität,mob,Pendlersaldo (Zupendler minus Wegpendler),mob_pendler_saldo
+,,Pendlersaldo pro 100 Erwerbstätiger,mob_ant_pendler_saldo

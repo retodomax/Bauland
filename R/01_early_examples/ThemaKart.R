@@ -61,18 +61,40 @@ ch_pg$GDENR <- as.numeric(as.character(ch_pg$GDENR))
 
 # order object to combine -------------------------------------------------
 
-kt_order <- tibble(kt_nr = ch_kt$ID0,
+ch_order <- tibble(nr = 8100,
+                   shape_ch_name = ch_ch$ID1,
+                   bfs_name = "Schweiz")
+
+kt_order <- tibble(nr = ch_kt$ID0,
             shape_kt_name = ch_kt$ID1) %>% 
-  left_join(bfs_nr_kt)
+  left_join(bfs_nr_kt, by = c("nr" = "kt_nr")) %>% 
+  rename(bfs_name = kt_name)
 
-bz_order <- tibble(bz_nr = ch_bz$BEZIRKSNUM,
+bz_order <- tibble(nr = ch_bz$BEZIRKSNUM,
                    shape_bz_name = ch_bz$NAME) %>% 
-  left_join(bfs_nr_bz)
+  left_join(bfs_nr_bz, by = c("nr" = "bz_nr")) %>% 
+  rename(bfs_name = bz_name)
 
-pg_order <- tibble(pg_nr = ch_pg$GDENR,
+pg_order <- tibble(nr = ch_pg$GDENR,
             shape_pg_name = ch_pg$GDENAME) %>% 
-  left_join(bfs_nr_pg)
+  left_join(bfs_nr_pg, by = c("nr" = "pg_nr")) %>% 
+  rename(bfs_name = pg_name)
 
+
+
+# add BFS name to maps ----------------------------------------------------
+
+ch_ch$bfs_name <- ch_order$bfs_name
+ch_kt$bfs_name <- kt_order$bfs_name
+ch_bz$bfs_name <- bz_order$bfs_name
+ch_pg$bfs_name <- pg_order$bfs_name
+
+ch_ch$bfs_nr <- ch_order$nr
+ch_kt$bfs_nr <- kt_order$nr
+ch_bz$bfs_nr <- bz_order$nr
+ch_pg$bfs_nr <- pg_order$nr
+
+# save.image("Data/01_Maps/all_maps.RData")
 
 
 # Combine with data -------------------------------------------------------

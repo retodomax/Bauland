@@ -19,7 +19,7 @@ library(leaflet)
 # import age tables -------------------------------------------------------
 
 load("../Data/canton_20to39.RData")
-ch <- readRDS(file = "../Data/gadm-swiss-maps/gadm36_CHE_1_sp.rds")
+ch <- readRDS(file = "../Data/01_Maps/gadm-swiss-maps/gadm36_CHE_1_sp.rds")
 
 
 
